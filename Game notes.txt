@@ -1,0 +1,438 @@
+canvas;
+In computer science and visualization, a canvas is a container that holds various drawing elements (lines, shapes, text, frames 
+containing others elements, etc.). It takes its name from the canvas used in visual arts. It is sometimes called a scene graph
+because it arranges the logical representation of a user interface or graphical scene.
+
+DOM;
+1.Style object-The Style object represents an individual style statement.
+eg. document.getElementById("myH1").style.color = "red";
+
+HTMl tag;
+1 <canvas>
+=>The <canvas> tag is used to draw graphics, on the fly, via scripting (usually JavaScript).
+
+The <canvas> tag is transparent, and is only a container for graphics, you must use a script
+to actually draw the graphics.
+
+Any text inside the <canvas> element will be displayed in browsers with JavaScript disabled 
+and in browsers that do not support <canvas>.
+
+2. innerWidth or innerHeight;
+=>The innerWidth or innerHeight; property returns the width of a window's content area.
+  The innerWidth or innerHeight; property is read-only.
+
+3.DOM;
+=>The canvas DOM element has .height and .width properties that correspond to the height="…" 
+and width="…" attributes. Set them to numeric values in JavaScript code to resize your canvas.
+
+4.The HTMLCanvasElement.getContext() method returns a drawing context on the canvas, or null 
+if the context identifier is not supported, or the canvas has already been set to a different
+context mode.
+
+Later calls to this method on the same canvas element, with the same contextType argument,
+will always return the same drawing context instance as was returned the first time the 
+method was invoked. It is not possible to get a different drawing context object on a 
+given canvas element.
+
+SYNTAX
+getContext(contextType)
+getContext(contextType, contextAttributes)
+
+PARAMETERS
+contextType
+A string containing the context identifier defining the drawing context associated to the canvas. Possible values are:
+
+>"2d", leading to the creation of a CanvasRenderingContext2D object representing a  two-dimensional rendering context.
+
+>"webgl" (or "experimental-webgl") which will create a WebGLRenderingContext object  representing a three-dimensional rendering context. This context is only available on  browsers that implement WebGL version 1 (OpenGL ES 2.0).
+
+>"webgl2" which will create a WebGL2RenderingContext object representing a  three-dimensional rendering context. This context is only available on browsers that  implement WebGL version 2 (OpenGL ES 3.0). Experimental
+
+>"bitmaprenderer" which will create an ImageBitmapRenderingContext which only provides  functionality to replace the content of the canvas with a given ImageBitmap.
+
+BUILD IN FUNCTION;
+1.clearInterval() 
+->The clearInterval() function in javascript clears the interval which has been set by  setInterval() function before that.
+
+2.setInterval() function takes two parameters. First a function to be executed and second  after how much time (in ms).
+
+>setInterval() executes the passed function for the given time interval. The number id  value returned by setInterval() function is stored in a variable and it’s passed into  the clearInterval() function to clear the interval.
+
+3.SetTimeout() Method
+The setTimeout Javascript method is used to call a function after a certain period of time. The time after which the function will be called is given by the user in milliseconds.
+
+Syntax
+let timerID = setTimeout(func, delay)
+
+Parameter
+There are two parameters that are to be passed to the setTimeout javascript method. One is the name of the function on which we want to apply the setTimeout javascript method, and the second is the time in milliseconds after which the above function is to be called.
+
+Apart from these, there can be additional arguments. These are the arguments that are passed to the function being called.
+
+*CanvasRenderingContext2D;
+>The CanvasRenderingContext2D interface, part of the Canvas API, provides the 2D rendering context for the drawing surface of a <canvas> element. It is used for drawing shapes, text, images, and other objects.
+>Its interface have properties and methods to do such above works.Like;
+
+1.CanvasRenderingContext2D.fillStyle;
+->The CanvasRenderingContext2D.fillStyle property of the Canvas 2D API specifies the color, gradient, or pattern to use inside shapes. The default style is #000 (black).
+
+2.CanvasRenderingContext2D.fillRect()
+The CanvasRenderingContext2D.fillRect() method of the Canvas 2D API draws a rectangle that is filled according to the current fillStyle.
+
+This method draws directly to the canvas without modifying the current path, so any subsequent fill() or stroke() calls will have no effect on it.
+
+Syntax
+fillRect(x, y, width, height)
+The fillRect() method draws a filled rectangle whose starting point is at (x, y) and whose size is specified by width and height. The fill style is determined by the current fillStyle attribute.
+
+Parameters
+x; The x-axis coordinate of the rectangle's starting point.
+
+y; The y-axis coordinate of the rectangle's starting point.
+
+width; The rectangle's width. Positive values are to the right, and negative to the left.
+
+height; The rectangle's height. Positive values are down, and negative are up.
+
+3.CanvasRenderingContext2D.fill()
+-The CanvasRenderingContext2D.fill() method of the Canvas 2D API fills the current or given path with the current fillStyle.
+
+Syntax
+-fill()
+-fill(path)
+-fill(fillRule)
+-fill(path, fillRule)
+
+Parameters
+fillRule
+The algorithm by which to determine if a point is inside or outside the filling region. Possible values:
+
+"nonzero": The non-zero winding rule. Default rule.
+"evenodd": The even-odd winding rule.
+path
+A Path2D path to fill.
+
+4.CanvasRenderingContext2D.beginPath()
+=>The CanvasRenderingContext2D.beginPath() method of the Canvas 2D API starts a new path by emptying the list of sub-paths. Call this method when you want to create a new path.
+
+Note: To create a new sub-path, i.e., one matching the current canvas state, you can use CanvasRenderingContext2D.moveTo().
+
+Syntax
+-beginPath()
+
+5.CanvasRenderingContext2D.arc()
+The CanvasRenderingContext2D.arc() method of the Canvas 2D API adds a circular arc to the current sub-path.
+
+Syntax
+arc(x, y, radius, startAngle, endAngle)
+arc(x, y, radius, startAngle, endAngle, counterclockwise)
+The arc() method creates a circular arc centered at (x, y) with a radius of radius. The path starts at startAngle, ends at endAngle, and travels in the direction given by counterclockwise (defaulting to clockwise).
+
+Parameters
+x;The horizontal coordinate of the arc's center.
+
+y;The vertical coordinate of the arc's center.
+
+radius
+The arc's radius. Must be positive.
+
+startAngle
+The angle at which the arc starts in radians, measured from the positive x-axis.
+
+endAngle
+The angle at which the arc ends in radians, measured from the positive x-axis.
+
+counterclockwise Optional
+An optional boolean value. If true, draws the arc counter-clockwise between the start and end angles. The default is false (clockwise).
+
+6.CanvasRenderingContext2D.strokeStyle
+The CanvasRenderingContext2D.strokeStyle property of the Canvas 2D API specifies the color, gradient, or pattern to use for the strokes (outlines) around shapes. The default is #000 (black).
+
+Note: For more examples of stroke and fill styles, see Applying styles and color in the Canvas tutorial.
+
+Value
+One of the followings:
+
+color
+A DOMString parsed as CSS <color> value.
+
+gradient
+A CanvasGradient object (a linear or radial gradient).
+
+pattern
+A CanvasPattern object (a repeating image).
+
+7.CanvasRenderingContext2D.stroke()
+The CanvasRenderingContext2D.stroke() method of the Canvas 2D API strokes (outlines) the current or given path with the current stroke style.
+
+Strokes are aligned to the center of a path; in other words, half of the stroke is drawn on the inner side, and half on the outer side.
+
+The stroke is drawn using the non-zero winding rule, which means that path intersections will still get filled.
+
+Syntax
+stroke()
+stroke(path)
+Parameters
+path
+A Path2D path to stroke.
+
+for more info=https://docs.w3cub.com/dom/canvasrenderingcontext2d/fillstyle
+
+**Window.requestAnimationFrame()
+=>The window.requestAnimationFrame() method tells the browser that you wish to perform an animation and requests that the browser calls a specified function to update an animation before the next repaint. The method takes a callback as an argument to be invoked before the repaint.
+
+=>Syntax
+requestAnimationFrame(callback)
+
+Parameters
+>callback
+-The function to call when it's time to update your animation for the next repaint. The callback function is passed one single argument, a DOMHighResTimeStamp similar to the one returned by performance.now(), indicating the point in time when requestAnimationFrame() starts to execute callback functions.
+
+>Return value
+-A long integer value, the request id, that uniquely identifies the entry in the callback list. This is a non-zero value, but you may not make any other assumptions about its value. You can pass this value to window.cancelAnimationFrame() to cancel the refresh callback request.
+
+EventListener;
+1.Element: mousemove event
+The mousemove event is fired at an element when a pointing device (usually a mouse) is moved while the cursor's hotspot is inside it.
+
+Syntax
+Use the event name in methods like addEventListener(), or set an event handler property.
+
+1.addEventListener('mousemove', (event) => {});
+
+2.onmousemove = (event) => { };
+
+**Event type
+A MouseEvent. Inherits from Event.
+
+1.MouseEvent
+The MouseEvent interface represents events that occur due to the user interacting with a pointing device (such as a mouse). Common events using this interface include click, dblclick, mouseup, mousedown.
+
+MouseEvent derives from UIEvent, which in turn derives from Event. Though the MouseEvent.initMouseEvent() method is kept for backward compatibility, creating of a MouseEvent object should be done using the MouseEvent() constructor.
+
+Several more specific events are based on MouseEvent, including WheelEvent, DragEvent, and PointerEvent.
+
+Event <- UIEvent <- MouseEvent
+
+**Event properties
+->This interface also inherits properties of its parents, UIEvent and Event.
+
+>Instance properties
+This interface also inherits properties of its parents, UIEvent and Event.
+1.MouseEvent.clientX; Read only
+>The X coordinate of the mouse pointer in local (DOM content) coordinates.
+
+>The clientX read-only property of the MouseEvent interface provides the horizontal coordinate within the application's viewport at which the event occurred (as opposed to the coordinate within the page).
+
+For example, clicking on the left edge of the viewport will always result in a mouse event with a clientX value of 0, regardless of whether the page is scrolled horizontally.
+
+Value
+A double floating point value.
+
+2.MouseEvent.clientY; Read only
+>The Y coordinate of the mouse pointer in local (DOM content) coordinates
+
+>The clientY read-only property of the MouseEvent interface provides the vertical coordinate within the application's viewport at which the event occurred (as opposed to the coordinate within the page).
+
+For example, clicking on the top edge of the viewport will always result in a mouse event with a clientY value of 0, regardless of whether the page is scrolled vertically.
+
+Value
+A double floating point value.
+
+**Math function
+1.Math.hypot()
+->The Math.hypot() function returns the square root of the sum of squares of its arguments. 
+
+Syntax
+Math.hypot()
+Math.hypot(value0)
+Math.hypot(value0, value1)
+Math.hypot(value0, value1, /* … ,*/ valueN)
+
+JAVASCRIPT METHOD;
+**JavaScript LocalStorage Methods - setItem(), getItem(), removeItem() clear() and key() Example
+=>The localStorage object is a type of web storage that allows Javascript websites and apps to store and access data right in the browser with no expiration date. This means the data stored in the browser will persist even after the browser window has been closed. The localStorage property object is read-only.
+
+JavaScript LocalStorage Methods
+To use LocalStorage in your web applications, there are 5 methods to choose from:
+>setItem(): Add key and value to LocalStorage
+
+>getItem(): Retrieve a value by the key from LocalStorage
+
+>removeItem(): Remove an item by key from LocalStorage
+
+>clear(): Clear all LocalStorage
+
+>key(): Passed a number to retrieve nth key of a LocalStorage
+
+1.localStorage.setItem() Method
+>This method just as the name implies allows you to store values in the localStorage object.
+It takes two parameters, a key and a value. The key can be referenced later to fetch the value attached to it.
+localStorage.setItem("firstName", "Ramesh");
+Where "firstName" is the key and "Ramesh" is the value. Also, note that localStorage can only store strings.
+To store arrays or objects you would have to convert them to strings.
+To do this we use the JSON.stringify() method before passing to setItem() .
+var user = {
+ firstName : "Ramesh",
+ lastName : "Fadatare"
+}
+localStorage.setItem("id", JSON.stringify(user));
+
+2.localStorage.getItem() Method
+The getItem() method allows you to access the data stored in the browser’s localStorage object.
+It accepts only one parameter which is the key and returns the value as a string.
+To retrieve the user object from the key stored above:
+localStorage.getItem('id');
+This returns a string with value as;
+"{"firstName":"Ramesh","lastName":"Fadatare"}"
+To use this value, you would have to convert it back to an object using JSON.parse() method.
+JSON.parse(localStorage.getItem('id'));
+
+*1.Document: visibilitychange event
+The visibilitychange event is fired at the document when the contents of its tab have become visible or have been hidden.
+
+The event is not cancelable.
+
+Syntax
+Use the event name in methods like addEventListener(), or set an event handler property.
+
+addEventListener('visibilitychange', (event) => { });
+
+onvisibilitychange = (event) => { };
+
+=>Event type
+A generic Event.
+
+Usage notes
+The event doesn't include the document's updated visibility status, but you can get that information from the document's visibilityState property.
+
+This event fires with a visibilityState of hidden when a user navigates to a new page, switches tabs, closes the tab, minimizes or closes the browser, or, on mobile, switches from the browser to a different app. Transitioning to hidden is the last event that's reliably observable by the page, so developers should treat it as the likely end of the user's session (for example, for sending analytics data).
+
+The transition to hidden is also a good point at which pages can stop making UI updates and stop any tasks that the user doesn't want to have running in the background.
+
+**How to Get Dates in JavaScript
+In JavaScript, you use either the new Date() or Date() constructor to get your dates (either current date or a specific date).
+
+The new Date() constructor returns a new Date object, while the Date() constructor returns a string representation of the current date and time.
+
+Example;
+let stringDate = Date();
+console.log(stringDate); // "Tue Aug 23 2022 14:47:12 GMT-0700 (Pacific Daylight Time)"
+
+let objectDate = new Date();
+console.log(objectDate); // Tue Aug 23 2022 14:47:12 GMT-0700 (Pacific Daylight Time)
+
+**Date.getTime() function JavaScript
+The Date object is a data type built into the JavaScript language. Date objects are created with the new Date( ) as shown below.
+
+Once a Date object is created, a number of methods allow you to operate on it. Most methods simply allow you to get and set the year, month, day, hour, minute, second, and millisecond fields of the object, using either local time or UTC (universal, or GMT) time.
+
+JavaScript date getTime() method returns the numeric value corresponding to the time for the specified date according to universal time. The value returned by the getTime method is the number of milliseconds since 1 January 1970 00:00:00.
+
+Syntax
+Its syntax is as follows
+
+dateObj.getTime();
+Example
+ Live Demo
+
+<html>
+<head>
+   <title>JavaScript Example</title>
+</head>
+<body>
+   <script type="text/javascript">
+      var dateObj = new Date('september 26, 89 12:4:25:96');
+   document.write("Time value: "+dateObj.getTime());
+   </script>
+</body>
+</html>
+
+Output
+Time value: 622794865096
+
+**MOUSE EVENT;
+Introduction to JavaScript mouse events
+Mouse events fire when you use the mouse to interact with the elements on the page. DOM Level 3 events define nine mouse events.
+
+mousedown, mouseup, and click
+When you click an element, there are no less than three mouse events fire in the following sequence:
+
+The mousedown fires when you depress the mouse button on the element.
+The mouseup fires when you release the mouse button on the element.
+The click fires when one mousedown and one mouseup detected on the element.
+JavaScript mouse event - click event
+If you depress the mouse button on an element and move your mouse off the element, and then release the mouse button. The only mousedown event fires on the element.
+
+Likewise, if you depress the mouse button, move the mouse over the element, and release the mouse button, the only mouseup event fires on the element.
+
+In both cases, the click event never fires.
+
+ mousemove
+The mousemove event fires repeatedly when you move the mouse cursor around an element. Even when you move the mouse one pixel, the mousemove event still fires. It will cause the page slow, therefore, you only register mousemove event handler only when you need it and immediately remove the event handler as soon as it is no longer used, like this:
+
+element.onmousemove = mouseMoveEventHandler;
+// ...
+//  later, no longer use
+element.onmousemove = null;
+Code language: JavaScript (javascript)
+mouseover / mouseout
+The mouseover fires when the mouse cursor is outside of the element and then move to inside the boundaries of the element.
+
+The mouseout fires when the mouse cursor is over an element and then moves another element.
+
+mouseenter / mouseleave
+The mouseenter fires when the mouse cursor is outside of an element and then moves to inside the boundaries of the element.
+
+The mouseleave fires when the mouse cursor is over an element and then moves to the outside of the element’s boundaries.
+
+Both mouseenter and mouseleave does not bubble and does not fire when the mouse cursor moves over descendant elements.
+
+*Mouse EVENT listener elements;
+1.Element: mousedown event
+The mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
+
+Note: This differs from the click event in that click is fired after a full click action occurs; that is, the mouse button is pressed and released while the pointer remains inside the same element. mousedown is fired the moment the button is initially pressed.
+
+Syntax
+Use the event name in methods like addEventListener(), or set an event handler property.
+
+addEventListener('mousedown', (event) => {});
+
+onmousedown = (event) => { };
+
+2.Element: mousemove event
+The mousemove event is fired at an element when a pointing device (usually a mouse) is moved while the cursor's hotspot is inside it.
+
+Syntax
+Use the event name in methods like addEventListener(), or set an event handler property.
+
+addEventListener('mousemove', (event) => {});
+
+onmousemove = (event) => { };
+
+3.Element: mouseup event
+The mouseup event is fired at an Element when a button on a pointing device (such as a mouse or trackpad) is released while the pointer is located inside it.
+
+mouseup events are the counterpoint to mousedown events.
+
+Syntax
+Use the event name in methods like addEventListener(), or set an event handler property.
+
+addEventListener('mouseup', (event) => {});
+
+onmouseup = (event) => { };
+
+4.Element: mouseout event
+The mouseout event is fired at an Element when a pointing device (usually a mouse) is used to move the cursor so that it is no longer contained within the element or one of its children.
+
+mouseout is also delivered to an element if the cursor enters a child element, because the child element obscures the visible area of the element.
+
+Syntax
+Use the event name in methods like addEventListener(), or set an event handler property.
+
+addEventListener('mouseout', (event) => {});
+
+onmouseout = (event) => { };
+
+*The HotSpot is the Point in the cursor that interacts with other elements on the screen.
